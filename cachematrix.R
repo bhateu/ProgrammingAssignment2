@@ -1,3 +1,4 @@
+## R-Programming - Data Science Course
 ## Programming Assignment 2
 
 ## Create Special Matrix
@@ -8,9 +9,11 @@ makeCacheMatrix <- function(x = matrix()) {
     x <<- y
     s <<- NULL
   }
+
   get <- function() x
   setsolve <- function(solve) s <<- solve
   getsolve <- function() s
+
   list(set = set, get = get,
        setsolve = setsolve,
        getsolve = getsolve)
@@ -25,8 +28,10 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(s)
   }
+
   data <- x$get()
   s <- solve(data, ...)
   x$setsolve(s)
+
   s
 }
